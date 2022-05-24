@@ -1,7 +1,8 @@
 const express = require("express");
-const app = express();
+require("dotenv").config();
 
-const PORT = 5000;
+const app = express();
+const PORT = process.env.REACT_APP_LOCALHOST_PROXY;
 
 app.get("/api", (req, res) => {
   res.json({ message: "talking to server" });
